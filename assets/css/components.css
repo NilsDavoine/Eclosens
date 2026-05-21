@@ -379,6 +379,26 @@
   padding-bottom: var(--space-16);
 }
 
+.understanding-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  max-width: 860px;
+  margin: 0 auto var(--space-12);
+}
+
+.understanding-header-right {
+  border-left: 2px solid var(--color-blue);
+  padding-left: var(--space-8);
+}
+
+.understanding-header-text {
+  font-size: var(--text-md);
+  color: var(--color-text-soft);
+  line-height: 1.8;
+}
+
 .understanding-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -1292,6 +1312,7 @@
   .site-header { width: calc(100% - 2rem); margin: 0.75rem auto 0; }
 
   /* Understanding */
+  .understanding-header { gap: var(--space-8); }
   .understanding-grid { grid-template-columns: repeat(2, 1fr); }
 
   /* Why */
@@ -1330,6 +1351,8 @@
   .hero-actions .btn { width: 100%; }
 
   /* Understanding */
+  .understanding-header { grid-template-columns: 1fr; gap: var(--space-6); }
+  .understanding-header-right { border-left: none; padding-left: 0; border-top: 2px solid var(--color-blue); padding-top: var(--space-6); }
   .understanding-grid { grid-template-columns: 1fr; }
 
   /* Services */
