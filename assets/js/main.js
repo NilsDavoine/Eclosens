@@ -88,6 +88,47 @@ document.querySelectorAll('.faq-question').forEach(btn => {
 });
 
 
+/* ── Blog category filter ── */
+const categoryBtns = document.querySelectorAll('.blog-category');
+const blogCards    = document.querySelectorAll('.blog-card');
+
+if (categoryBtns.length && blogCards.length) {
+  categoryBtns.forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      categoryBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.textContent.trim();
+
+      // Fade out all cards
+      blogCards.forEach(card => card.classList.add('is-fading'));
+
+      setTimeout(() => {
+        let matchIndex = 0;
+        blogCards.forEach(card => {
+          const tag   = card.querySelector('.blog-card-tag')?.textContent.trim();
+          const match = filter === 'Tous' || tag === filter;
+          card.classList.remove('is-fading');
+
+          if (match) {
+            card.style.display = '';
+            card.style.animationDelay = `${matchIndex * 0.07}s`;
+            card.classList.add('is-appearing');
+            card.addEventListener('animationend', () => {
+              card.classList.remove('is-appearing');
+              card.style.animationDelay = '';
+            }, { once: true });
+            matchIndex++;
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      }, 220);
+    });
+  });
+}
+
+
 /* ── Active nav link highlight ── */
 const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 document.querySelectorAll('.nav-links a').forEach(a => {

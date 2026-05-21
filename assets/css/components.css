@@ -1126,9 +1126,23 @@
      3px  3px 14px 2px rgba(75,  140, 200, 0.16),
      0    6px 20px     rgba(26,  92,  128, 0.08),
      0    1px  0       rgba(255, 255, 255, 0.88) inset;
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition: transform var(--transition-base), box-shadow var(--transition-base), opacity 0.2s ease;
   display: flex;
   flex-direction: column;
+}
+
+.blog-card.is-fading {
+  opacity: 0;
+  transform: translateY(8px) scale(0.96);
+}
+
+@keyframes blogCardAppear {
+  from { opacity: 0; transform: translateY(14px) scale(0.95); }
+  to   { opacity: 1; transform: none; }
+}
+
+.blog-card.is-appearing {
+  animation: blogCardAppear 0.35s ease forwards;
 }
 
 .blog-card:hover {
