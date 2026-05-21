@@ -63,7 +63,9 @@ document.querySelectorAll('.faq-question').forEach(btn => {
   btn.addEventListener('click', () => {
     const isExpanded = btn.getAttribute('aria-expanded') === 'true';
     const answerId   = btn.getAttribute('aria-controls');
-    const answer     = document.getElementById(answerId);
+    const answer     = answerId
+      ? document.getElementById(answerId)
+      : btn.closest('.faq-item')?.querySelector('.faq-answer');
     if (!answer) return;
 
     /* Close siblings */
@@ -71,7 +73,10 @@ document.querySelectorAll('.faq-question').forEach(btn => {
       if (other !== btn) {
         other.setAttribute('aria-expanded', 'false');
         other.closest('.faq-item')?.classList.remove('is-open');
-        const otherAnswer = document.getElementById(other.getAttribute('aria-controls'));
+        const otherId = other.getAttribute('aria-controls');
+        const otherAnswer = otherId
+          ? document.getElementById(otherId)
+          : other.closest('.faq-item')?.querySelector('.faq-answer');
         if (otherAnswer) otherAnswer.hidden = true;
       }
     });
