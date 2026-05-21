@@ -577,6 +577,11 @@
   margin-top: var(--space-1);
 }
 
+.credential-number sup {
+  font-size: 0.45em;
+  vertical-align: super;
+}
+
 .credential-text {
   font-family: var(--font-display);
   font-size: var(--text-xl);
