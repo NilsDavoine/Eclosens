@@ -15,10 +15,10 @@
   margin: 0.75rem auto 0;
   border-radius: var(--radius-xl);
   z-index: 200;
-  background-color: rgba(20, 52, 80, 0.50);
+  background-color: rgba(20, 52, 80, 0.38);
   backdrop-filter: blur(36px);
   -webkit-backdrop-filter: blur(36px);
-  border: 1px solid rgba(140, 198, 232, 0.22);
+  border: 1.5px solid rgba(140, 198, 232, 0.65);
   box-shadow:
     -6px  -6px 32px 4px rgba(140, 198, 232, 0.18),
      6px   6px 32px 4px rgba(8,   30,  58, 0.45),
