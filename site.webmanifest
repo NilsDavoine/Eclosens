@@ -1,0 +1,22 @@
+{
+  "name": "Éclosens",
+  "short_name": "Éclosens",
+  "description": "Accompagnement FIV et PMA au Luxembourg",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#F8F6F2",
+  "theme_color": "#8CC6E8",
+  "lang": "fr",
+  "icons": [
+    {
+      "src": "/assets/img/ui/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/ui/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
