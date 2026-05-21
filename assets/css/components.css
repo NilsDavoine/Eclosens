@@ -624,8 +624,25 @@
 .service-card--wide {
   grid-column: span 4;
   flex-direction: row;
-  align-items: flex-start;
-  gap: var(--space-8);
+  align-items: center;
+  gap: var(--space-10);
+  background: linear-gradient(135deg, var(--color-blue-faint) 0%, #F8F6F2 65%);
+  border-color: rgba(140, 198, 232, 0.35);
+  border-left: 4px solid var(--color-blue);
+  padding: var(--space-10) var(--space-10);
+}
+
+.service-card--wide .service-icon-wrap {
+  color: var(--color-blue-deep);
+  opacity: 1;
+  background: rgba(255,255,255,0.7);
+  border-radius: 50%;
+  width: 72px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
 }
 
 .service-card--wide .service-card-body {
